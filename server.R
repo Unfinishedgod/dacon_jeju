@@ -3,15 +3,17 @@
 print("------------server------------")
 
 
-shinyServer(function(input, output) {
+server <- shinyServer(function(input, output) {
   
   leaflet_data <- reactive({
-    coord 
-      # filter(YM == input$selectYM) %>% 
-      # filter(Time == Time_list[input$selectTime + 1]) %>% 
-      # filter(Type == input$selectType)
+    total_df
+    # total_df %>% 
+    #   filter(Time == Time_list[input$selectTime + 1]) %>% 
+    #   filter(YM == paste0("20200", input$selectYM)) %>% 
+    #   filter(Type == input$selectType)
   })
   
+
   
   
   output$histCentile <- renderPlotly({
@@ -77,21 +79,13 @@ shinyServer(function(input, output) {
     
     test_df <- leaflet_data()
     
-    # asdf <- test_df %>% 
-    #   head(1)
-    # 
-    # asdf$FranClass <- "제주공항"
-    # asdf$long <- 126.496
-    # asdf$lat <- 33.50594
-    # 
-    # test_df <- test_df %>% 
-    #   bind_rows(asdf)
-    
-    test_df <- test_df %>% 
-      filter(Time == Time_list[input$selectTime + 1]) %>% 
-      filter(YM == paste0("20200", input$selectYM)) %>% 
+    test_df <- test_df %>%
+      filter(Time == Time_list[input$selectTime + 1]) %>%
+      filter(YM == paste0("20200", input$selectYM)) %>%
       filter(Type == input$selectType)
     
+    color_index <-  test_df$FranClass %>% unique()
+    colors_list <- brewer.pal(length(color_index), "Set1")
     
     leaflet() %>%
       setView(lng = 126.7229, lat = 33.40035, zoom = 11) %>% 
@@ -120,6 +114,7 @@ shinyServer(function(input, output) {
   #create a data object to display data
   output$data <- renderDataTable({
     leaflet_data() %>%
+      select(-OBJECTID, -Field1) %>% 
       DT::datatable(
         filter = 'top',
         escape = FALSE, 

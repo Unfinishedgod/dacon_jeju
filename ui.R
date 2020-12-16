@@ -1,7 +1,7 @@
 # 제주도 공간정보 탐색적 데이터 분석 경진대회
 print("------------ui------------")
 
-navbarPage("공간정보 탐색적 데이터 분석 경진대회", id="nav",
+ui <- navbarPage("DACON: 공간정보 탐색적 데이터 분석 경진대회", id="nav",
            tabPanel("Interactive",
                     tags$a(
                       href="https://dacon.io/competitions/official/235682/overview/", 
@@ -56,7 +56,8 @@ navbarPage("공간정보 탐색적 데이터 분석 경진대회", id="nav",
                         )
                     )
            ),
-           tabPanel("rawdata",
+          
+            tabPanel("data",
                     DT::dataTableOutput("data")
            )
 )
