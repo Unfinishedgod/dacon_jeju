@@ -5,29 +5,26 @@ print("------------server------------")
 
 server <- shinyServer(function(input, output) {
   
-  
   # leaflet 반응형 데이터 ----
   leaflet_data <- reactive({
     
-    total_df <- eventReactive(input$go, {
-      total_df <- total_df[sample(1:nrow(total_df), nrow(total_df)/100), ]
-      
-    })
+    total_df <- total_df[sample(1:nrow(total_df), nrow(total_df)/100), ]
+    
     
     if(input$selectTime == "ALL") {
-      fixed_selectTime <- Time_list[-1]
+      fixed_selectTime <- Time_list
     } else {
       fixed_selectTime <- input$selectTime 
     }
     
     if(input$selectYM == "ALL") {
-      fixed_selectYM <- YM_list[-1]
+      fixed_selectYM <- YM_list
     } else {
       fixed_selectYM <- input$selectYM
     }
     
     if(input$selectFranClass == "ALL") {
-      fixed_selectFranClass <- FranClass_list[-1]
+      fixed_selectFranClass <- FranClass_list
     } else {
       fixed_selectFranClass <- input$selectFranClass
     }

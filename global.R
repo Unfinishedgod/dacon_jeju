@@ -26,15 +26,13 @@ colors_list <- brewer.pal(length(color_index), "Set1")
 
 # Select Box ----
 YM_list <- total_df$YM %>% unique()
-YM_list <- c("ALL", YM_list)
-
 FranClass_list <- total_df$FranClass %>% unique()
-FranClass_list <- c("ALL", FranClass_list)
-
 Time_list <- total_df$Time %>% unique()
-Time_list <- c("ALL", Time_list)
-
 Type_list <- total_df$Type %>% unique()
+
+YM_list_2 <- c("ALL", YM_list)
+FranClass_list_2 <- c("ALL", FranClass_list)
+Time_list_2 <- c("ALL", Time_list)
 
 # 시간에 따른 조정 ----
 timeline_raw <- total_df %>% 

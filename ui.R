@@ -31,22 +31,22 @@ ui <-
                                         
                                         h2("Option"),
                                         h4("총 1,072,439개중 표본으로 약 10724개 사용"), 
-                                        actionButton("reset", "표본 재추출"),
+                                        
                                         selectInput(inputId = "selectTime",
                                                     label = h4("시간"),
-                                                    choices = Time_list,
+                                                    choices = Time_list_2,
                                                     selected = "ALL",
                                                     width = 400),
                                         
                                         selectInput(inputId = "selectYM",
                                                     label = h4("년/월"),
-                                                    choices = YM_list,
+                                                    choices = YM_list_2,
                                                     selected = "ALL",
                                                     width = 400),
                                         
                                         selectInput(inputId = "selectFranClass",
                                                     label = h4("소상공인구분"),
-                                                    choices = FranClass_list,
+                                                    choices = FranClass_list_2,
                                                     selected = "ALL",
                                                     width = 400),
                                         
