@@ -1,7 +1,6 @@
 # 제주도 공간정보 탐색적 데이터 분석 경진대회
 library(tidyverse)
 library(lubridate)
-library(leaflet)
 library(plotly)
 library(formattable)
 library(shiny)
@@ -10,10 +9,11 @@ library(DT)
 library(RColorBrewer)
 library(shinydashboard)
 library(reactable)
+library(rsconnect)
 
 # law 데이터 로드
-# total_df <- read_csv("data/total_df.csv")
-total_df <- read_csv("../total_df.csv")
+total_df <- read_csv("data/total_df.csv")
+# total_df <- read_csv("../total_df.csv")
 
 # Time중 "x시"는 제거
 total_df <- total_df %>% 
@@ -75,6 +75,19 @@ timeline_dis_df <- timeline_raw %>%
 
 diff_time_list <- c("심야~새벽", "새벽~오전","오전~점심","점심~오후", "오후~저녁", "저녁~심야")
 
+
+# vline function 
+vline <- function(x = 0, color = "black") {
+  list(
+    type = "line",
+    y0 = 0,
+    y1 = 1,
+    yref = "paper",
+    x0 = x,
+    x1 = x,
+    line = list(color = color, dash = 'dot', width = 1)
+  )
+}
 
 ## Shiny ui, server
 print("=================ui.R=================")

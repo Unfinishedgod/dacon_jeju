@@ -1,0 +1,12 @@
+name: dacon_jeju
+title: dacon_jeju
+username:
+account: shjj08
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3413207
+bundleId: 4002584
+url: https://shjj08.shinyapps.io/dacon_jeju/
+when: 1608231287.95148
+asMultiple: FALSE
+asStatic: FALSE
