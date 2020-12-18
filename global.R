@@ -12,7 +12,7 @@ library(reactable)
 library(rsconnect)
 
 # law 데이터 로드
-total_df <- read_csv("data/total_df.csv")
+total_df <- read_csv("total_df.csv")
 # total_df <- read_csv("../total_df.csv")
 
 # Time중 "x시"는 제거

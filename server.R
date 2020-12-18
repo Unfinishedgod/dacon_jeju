@@ -295,7 +295,10 @@ server <- shinyServer(function(input, output) {
       rename(`증감` = input$selectType_2) %>% 
       arrange(desc(`증감`)) %>% 
       head(10) %>% 
-      reactable()
+      reactable(
+        columns = list(
+        `증감` = colDef(aggregate = "sum", format = colFormat(separators = TRUE))
+      ))
   })
   
   
@@ -450,7 +453,10 @@ server <- shinyServer(function(input, output) {
       rename(`증감` = input$selectType_2) %>% 
       arrange((`증감`)) %>% 
       head(10) %>% 
-      reactable()
+      reactable(
+        columns = list(
+          `증감` = colDef(aggregate = "sum", format = colFormat(separators = TRUE))
+        ))
   })
   
   
@@ -606,7 +612,10 @@ server <- shinyServer(function(input, output) {
       rename(`증감` = input$selectType_3) %>% 
       arrange(desc(`증감`)) %>% 
       head(10) %>% 
-      reactable()
+      reactable(
+        columns = list(
+          `증감` = colDef(aggregate = "sum", format = colFormat(separators = TRUE))
+        ))
   })
   
   
@@ -761,7 +770,10 @@ server <- shinyServer(function(input, output) {
       rename(`증감` = input$selectType_3) %>% 
       arrange((`증감`)) %>% 
       head(10) %>% 
-      reactable()
+      reactable(
+        columns = list(
+          `증감` = colDef(aggregate = "sum", format = colFormat(separators = TRUE))
+        ))
   })
   
   
