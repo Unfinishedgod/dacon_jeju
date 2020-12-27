@@ -5,8 +5,8 @@ account: shjj08
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3413242
-bundleId: 4003724
+bundleId: 4031602
 url: https://shjj08.shinyapps.io/dacon_jeju/
-when: 1608251621.2319
+when: 1609035081.47524
 asMultiple: FALSE
 asStatic: FALSE

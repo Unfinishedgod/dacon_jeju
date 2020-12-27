@@ -3,14 +3,14 @@ print("------------ui------------")
 
 ui <-   
   navbarPage("DACON: 공간정보 탐색적 데이터 분석 경진대회", id="nav",
-             # Main ----
-             tabPanel("Dacon",
-                      tags$a(
-                        href="https://dacon.io/competitions/official/235682/overview/", 
-                        tags$img(src="img_main.PNG", 
-                                 title="Example Image Link", 
-                                 width="100%",height="25%"))
-             ), 
+             # # Main ----
+             # tabPanel("Dacon",
+             #          tags$a(
+             #            href="https://dacon.io/competitions/official/235682/overview/", 
+             #            tags$img(src="img_main.PNG", 
+             #                     title="Example Image Link", 
+             #                     width="100%",height="25%"))
+             # ), 
              
              # Map ----
              tabPanel("소상공인 구분 지도 분포",
@@ -142,10 +142,10 @@ ui <-
              # Data ----
              tabPanel("데이터",
                       DT::dataTableOutput("data")
-             ),
-             # About ----
-             tabPanel("About",
              )
+             # # About ----
+             # tabPanel("About",
+             # )
   )
 # )
 

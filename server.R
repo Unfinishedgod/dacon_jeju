@@ -56,6 +56,11 @@ server <- shinyServer(function(input, output) {
     
     test_df <- leaflet_data()
     
+    # # Franclass에 따른 컬러 코드 작성
+    # color_index_leaflet <- test_df$FranClass %>% unique()
+    # colors_list_leaflet <- brewer.pal(length(color_index_leaflet), "Set1")
+    
+    
     leaflet() %>%
       setView(lng = 126.7229, lat = 33.40035, zoom = 11) %>% 
       addTiles() %>%
@@ -74,7 +79,7 @@ server <- shinyServer(function(input, output) {
                                       "<br/> 총사용금액(재난지원금 포함): ",round(comma(test_df$TotalSpent , 0), 0) ,"",
                                       "<br/> 재난지원금 사용금액: ", round(comma(test_df$DisSpent , 0), 0),"")) %>%
       addLegend("topleft",
-                colors = colors_list,
+                colors = unique(test_df$color),
                 labels = unique(test_df$FranClass),
                 opacity = 1)
   })
