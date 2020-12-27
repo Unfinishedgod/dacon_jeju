@@ -389,9 +389,18 @@ asdf %>%
   )
 
 total_df %>% 
-  group_by(FranClass, 구, 동) %>% 
+  group_by(구, 동) %>% 
   summarise(TotalSpent_2 = mean(TotalSpent),
-            DisSpent_2= mean(DisSpent))
+            DisSpent_2= mean(DisSpent)) %>% 
+  mutate(`구, 동` = paste(구, 동)) %>% 
+  gather(key = "asdff", value = "fff", `TotalSpent_2`:`DisSpent_2`) %>% 
+  plot_ly() %>% 
+  add_trace(x = ~`구, 동`, y = ~fff, color = ~asdff) %>% 
+  layout(
+    title = "Bar Chart",
+    xaxis = list(title = "x축 이름"),
+    yaxis = list(title = "y축 이름")
+  )
 
 
 sleep %>% 
