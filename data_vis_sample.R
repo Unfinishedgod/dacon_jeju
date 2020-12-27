@@ -388,6 +388,12 @@ asdf %>%
     yaxis = list(title = "y축 이름")
   )
 
+total_df %>% 
+  group_by(FranClass, 구, 동) %>% 
+  summarise(TotalSpent_2 = mean(TotalSpent),
+            DisSpent_2= mean(DisSpent))
+
+
 sleep %>% 
   plot_ly() %>% 
   add_trace(x = ~ID, y = ~extra, color= ~group,  type = "bar") %>% 
