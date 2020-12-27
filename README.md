@@ -1,4 +1,4 @@
-# Dacon: 공간정보 탐색적 데이터 분석 경진대회 Shiny 시각화
+## Dacon: 공간정보 탐색적 데이터 분석 경진대회 Shiny 시각화
 
 ![main](jeju_dacon_main.PNG)
 
