@@ -15,6 +15,8 @@ library(rsconnect)
 total_df <- read_csv("total_df.csv")
 # total_df <- read_csv("../total_df.csv")
 
+# git test 
+
 # Time중 "x시"는 제거
 total_df <- total_df %>% 
   filter(Time != "x시") %>% 
